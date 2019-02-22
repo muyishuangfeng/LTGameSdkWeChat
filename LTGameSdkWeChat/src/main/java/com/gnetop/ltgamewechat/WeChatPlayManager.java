@@ -14,7 +14,7 @@ import java.util.WeakHashMap;
 
 public class WeChatPlayManager {
 
-
+    private static final String BASE_URL="http://login.gdpgold.com";
     /**
      * 微信支付
      */
@@ -23,7 +23,7 @@ public class WeChatPlayManager {
         final IWXAPI api = WXAPIFactory.createWXAPI(context, null);
         // 将该app注册到微信
         api.registerApp(appID);
-        LoginBackManager.weChatPlay( params, new OnPlayResultedListener() {
+        LoginBackManager.weChatPlay( BASE_URL,params, new OnPlayResultedListener() {
             @Override
             public void onPlayError(Throwable ex) {
 
