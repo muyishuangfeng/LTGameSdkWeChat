@@ -1,5 +1,6 @@
 package com.gnetop.ltgamewechat;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.gnetop.ltgamecommon.util.ToastUtils;
@@ -10,7 +11,8 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 public class WeChatLoginManager {
 
-    private static WeChatLoginManager sInstance;
+    @SuppressLint("StaticFieldLeak")
+    private volatile static WeChatLoginManager sInstance;
     private Context mContext;
     private String appSecret;
     private String baseUrl;
